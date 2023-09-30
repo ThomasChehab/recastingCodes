@@ -13,10 +13,9 @@ for i in range(len(masses_phi)):
         f.write(f"generate g g > h HIG=1 HIW=0 QED=0 QCD=0, (h > h2 h2, h2 > f f) \n") # Generate the process.
         f.write(f"output Script_mH{masses_phi[i]}_mS{masses_S[i]} \n")
         f.write(f"launch Script_mH{masses_phi[i]}_mS{masses_S[i]} \n")
-        f.write(f"1 \n") #Add Pythia
+        f.write(f"shower=Pythia8 \n") #Add Pythia
+        f.write(f"0 \n") #Launch the computation
         f.write(f"set nevents = {nevent[i]} \n" ) # change the number of event
-        f.write(f"set pdlabel = lhapdf \n" ) # Set the Parton Distribution Function.
-        f.write(f"set lhaid = 315000 \n" )
         f.write(f"set mhsinput {masses_S[i]} \n") # Set a mass for the LLP.
         f.write(f"set mhinput {masses_phi[i]} \n") # Set a mass for the Heavy Neutral Boson.
         f.write(f"set epsilon 1e-10 \n") # Set the couplings for epsilon.
@@ -42,14 +41,12 @@ for i in range(len(masses_phi)):
         f.write(f"set drbl = 0 \n" )
         f.write(f"set dral = 0 \n" )
         f.write(f"set cut_decays = F\n" )
-        f.write(f"set use_syst = T \n" ) # Allows the code to keep track of the various parameter needed for the computation of the systematics
-        f.write(f"set sys_scalefact = 1 0.5 2 \n" ) # Factorization/renormalization scale factor
-        f.write(f"set sys_pdf = NNPDF31_lo_as_0118 \n" )
         f.write(f"set wzp = Auto\n"  ) # Set the calculation of the Width.
         f.write(f"set wh = Auto\n" )
         f.write(f"set wt = Auto\n" )
         f.write(f"set whs = Auto\n" )
         f.write(f"set lhe_version = 3.0\n" )
+        f.write(f"0 \n") #launch the generation
         f.write(f"exit")
 
     else:
@@ -59,10 +56,9 @@ for i in range(len(masses_phi)):
         f.write(f"generate g g > h HIG=1 HIW=0 QED=0 QCD=0, (h > h2 h2, h2 > f f) \n")
         f.write(f"output Script_mH{masses_phi[i]}_mS{masses_S[i]} \n")
         f.write(f"launch Script_mH{masses_phi[i]}_mS{masses_S[i]} \n")
-        f.write(f"1 \n")
+        f.write(f"shower=Pythia8 \n") #Add Pythia
+        f.write(f"0 \n") #Add Pythia
         f.write(f"set nevents = {nevent[i]} \n" )
-        f.write(f"set pdlabel = lhapdf \n" )
-        f.write(f"set lhaid = 315000 \n" )
         f.write(f"set mhsinput {masses_S[i]} \n")
         f.write(f"set mhinput {masses_phi[i]} \n")
         f.write(f"set epsilon 1e-10 \n")
@@ -88,12 +84,11 @@ for i in range(len(masses_phi)):
         f.write(f"set drbl = 0 \n" )
         f.write(f"set dral = 0 \n" )
         f.write(f"set use_syst = T \n" )
-        f.write(f"set sys_scalefact = 1 0.5 2 \n" )
-        f.write(f"set sys_pdf = NNPDF31_lo_as_0118 \n" )
         f.write(f"set wzp = 5\n" )
         f.write(f"set wh = 5\n" )
         f.write(f"set wt = Auto\n" )
         f.write(f"set whs = 5\n" )
+        f.write(f"0 \n")
         f.write(f"exit")
 
 for mass_phi,mass_s in zip(masses_phi,masses_S):
