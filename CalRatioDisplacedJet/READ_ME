@@ -1,14 +1,14 @@
-To process the recasting, please follow these instructions.
+To process the recasting, please follow these instructions :
 
-- First of all, you will need to install this version of madgraph : MG5_aMC_v3.4.2.tar.gz from : https://launchpad.net/mg5amcnlo/+download
+- First of all, you will need to install this version of MadGraph : MG5_aMC_v3.4.2.tar.gz from : https://launchpad.net/mg5amcnlo/+download
 
 - In the same folder, download and place the model named : HAHM_MG5model_v3 from http://insti.physics.sunysb.edu/~curtin/hahm_mg.html. Extract the tarball in the MG5_aMC_v3_4_2 folder.
 
-- You will also need the folder 'ATLAS_data' in this github repository and place this folder in your MG5_aMC_v3_4_2 folder. It contains files from HEP_Data from the ATLAS public results.
+- You will also need the folder 'ATLAS_data' which is in this github repository. Place it in your MG5_aMC_v3_4_2 folder. It contains files from HEP_Data from the ATLAS public results.
 
-- Launch madgraph by writing, in a konsole (launched in the MG5_aMC_v3_4_2 folder) : ./bin/mg5_aMC
+- Launch MadGraph by writing, in a terminal (opened in the MG5_aMC_v3_4_2 folder) : ./bin/mg5_aMC
 
-- After entering in the MG konsole, install LHAPDF6 and Pythia8 by writing :
+- After entering the MadGraph terminal, install LHAPDF6 and Pythia8 by writing :
 
 MG5_aMC> install lhapdf6
 
@@ -22,15 +22,15 @@ It will take some minutes.
 
 MG5_aMC> convert model ./HAHM_MG5model_v3/HAHM_variableMW_v3_UFO
 
-MG is ready to generate events on your computer ! To continu, please be sure that everything that you download from the GitHub repository should be IN the folder MG5_aMC_v3_4_2 ( where is your madgraph )
+MadGraph is now ready to generate events on your computer ! Please be sure that everything you download from the GitHub repository should be in the MG5_aMC_v3_4_2 folder ( where is your MadGraph )
 
-- Now, you can generate the scripts that MG will read by launching the function Writing_Scripts_MG+P8.py in the konsole with :
+- Now, you can generate the scripts that MadGraph will read by launching the function Writing_Scripts_MG+P8.py in the terminal with :
 
 python3 Writing_Scripts_MG+P8.py
 
-It will write five scripts and launch the associated madgraph generation. This generation is long. After approximately 1h40-2h of running, all files should be ready.
+It will write five scripts and launch the associated MadGraph generation. This generation is long. After approximately 1h40-2h of running, all files should be ready.
 
-- To process the data and obtain plots and limits, you can now launch in the konsole :
+- To process the data and obtain plots and limits, you can now launch in the terminal :
 
 python3 Computation_Map.py
 
