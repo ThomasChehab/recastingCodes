@@ -1,6 +1,10 @@
+This code has been written using the version python 3.8.8.
+
 To process the recasting, please follow these instructions :
 
-- First of all, you will need to install this version of MadGraph : MG5_aMC_v3.4.2.tar.gz from : https://launchpad.net/mg5amcnlo/+download
+- Clone this repository.
+
+- Install this version of MadGraph : MG5_aMC_v3.4.2.tar.gz from : https://launchpad.net/mg5amcnlo/+download
 
 - In the same folder, download and place the model named : HAHM_MG5model_v3 from https://github.com/davidrcurtin/HAHM. Extract the tarball in the MG5_aMC_v3_4_2 folder.
 
